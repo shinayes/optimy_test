@@ -1,5 +1,6 @@
 <?php
 
+use App\Lib\Config;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -8,7 +9,7 @@ $routes = new RouteCollection();
 $routes->add(
   'news',
   new Route(
-    constant('URL_SUBFOLDER') . '/news',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/news',
     array(
       'controller' => 'NewsController',
       'method' => 'index'
@@ -19,7 +20,7 @@ $routes->add(
 $routes->add(
   'news_show',
   new Route(
-    constant('URL_SUBFOLDER') . '/news/{id}',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/news/{id}',
     array(
       'controller' => 'NewsController',
       'method' => 'show'
@@ -31,43 +32,55 @@ $routes->add(
 $routes->add(
   'news_create',
   new Route(
-    constant('URL_SUBFOLDER') . '/news/create',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/news/create',
     array(
       'controller' => 'NewsController',
       'method' => 'create'
     ),
-    array('id' => '[0-9]+')
+    array(),
+    array(),
+    '',
+    array(),
+    array('post')
   )
 );
 
 $routes->add(
   'news_update',
   new Route(
-    constant('URL_SUBFOLDER') . '/news/update',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/news/update',
     array(
       'controller' => 'NewsController',
       'method' => 'update'
     ),
-    array('id' => '[0-9]+')
+    array(),
+    array(),
+    '',
+    array(),
+    array('put')
   )
 );
 
 $routes->add(
   'news_delete',
   new Route(
-    constant('URL_SUBFOLDER') . '/news/delete',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/news/delete',
     array(
       'controller' => 'NewsController',
       'method' => 'delete'
     ),
-    array('id' => '[0-9]+')
+    array(),
+    array(),
+    '',
+    array(),
+    array('delete')
   )
 );
 
 $routes->add(
   'comments',
   new Route(
-    constant('URL_SUBFOLDER') . '/comments',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/comments',
     array(
       'controller' => 'CommentsController',
       'method' => 'index'
@@ -78,7 +91,7 @@ $routes->add(
 $routes->add(
   'comments_show',
   new Route(
-    constant('URL_SUBFOLDER') . '/comments/{id}',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/comments/{id}',
     array(
       'controller' => 'CommentsController',
       'method' => 'show'
@@ -90,35 +103,47 @@ $routes->add(
 $routes->add(
   'comments_create',
   new Route(
-    constant('URL_SUBFOLDER') . '/comments/create',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/comments/create',
     array(
       'controller' => 'CommentsController',
       'method' => 'create'
     ),
-    array('id' => '[0-9]+')
+    array(),
+    array(),
+    '',
+    array(),
+    array('post')
   )
 );
 
 $routes->add(
   'comments_update',
   new Route(
-    constant('URL_SUBFOLDER') . '/comments/update',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/comments/update',
     array(
       'controller' => 'CommentsController',
       'method' => 'update'
     ),
-    array('id' => '[0-9]+')
+    array(),
+    array(),
+    '',
+    array(),
+    array('put')
   )
 );
 
 $routes->add(
   'comments_delete',
   new Route(
-    constant('URL_SUBFOLDER') . '/comments/delete',
+    Config::get('URL_SUBFOLDER', 'optimy_test') . '/comments/delete',
     array(
       'controller' => 'CommentsController',
       'method' => 'delete'
     ),
-    array('id' => '[0-9]+')
+    array(),
+    array(),
+    '',
+    array(),
+    array('delete')
   )
 );

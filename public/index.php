@@ -9,9 +9,3 @@ require_once '../config.php';
 // Routes
 require_once '../routes/web.php';
 require_once '../app/Router.php';
-
-use App\Model\Comment;
-use App\Model\News;
-use App\Utils\DB;
-use App\Utils\NewsManager;
-

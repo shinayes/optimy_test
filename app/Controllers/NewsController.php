@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Model\News;
+use Symfony\Component\Routing\Annotation\Route;
 
 class NewsController
 {
@@ -25,7 +26,7 @@ class NewsController
     require_once '../views/news/details.php';
   }
 
-  public function create($routes, $request) 
+  public function create($routes, $request)
   {
     $newsDetail = $this->news->create([
       'title' => $request->input('title'),
@@ -35,7 +36,10 @@ class NewsController
     require_once '../views/news/details.php';
   }
 
-  public function update(int $id, $routes, $request) 
+  /** 
+   * @Route("/news", name="news_lists") 
+   */
+  public function update(int $id, $routes, $request)
   {
     $this->news->update($id, [
       'title' => $request->input('title'),
@@ -47,7 +51,10 @@ class NewsController
     require_once '../views/news/details.php';
   }
 
-  public function delete(int $id, $routes, $request) 
+  /** 
+   * @Route("/news", name="news_lists") 
+   */
+  public function delete(int $id, $routes, $request)
   {
     $this->news->delete($id);
 

@@ -11,9 +11,6 @@ class DB
   public $pdo;
 
   public $columns = array();
-  public $table;
-  public $where;
-  public $limit;
   public $query_elements = [' SELECT ', ' FROM ', ' WHERE ', ' LIMIT '];
 
   public function __construct()
@@ -38,22 +35,6 @@ class DB
   {
     $sth = $this->pdo->query($sql);
     return $sth->fetchAll();
-  }
-
-  public function from($table)
-  {
-      $this->table = $table;
-      return $this;
-  }
-  public function where($where)
-  {
-      $this->where = $where;
-      return $this;
-  }
-  public function limit($limit)
-  {
-      $this->limit = $limit;
-      return $this;
   }
 
   public function exec($sql)

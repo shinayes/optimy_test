@@ -1,16 +1,17 @@
-<?php 
+<?php
 namespace App\Lib;
 
 class Config
 {
-    private static $config;
+  private static $config;
 
-    public static function get($key, $default = null)
-    {
-        if (is_null(self::$config)) {
-            self::$config = require_once(__DIR__.'/../../config.php');
-        }
+  public static function get($key, $default = null)
+  {
+    if (is_null(self::$config)) {
+      self::$config = require_once('../config.php');
 
-        return !empty(self::$config[$key])?self::$config[$key]:$default;
     }
+
+    return !empty(self::$config[$key]) ? self::$config[$key] : $default;
+  }
 }
