@@ -1,0 +1,20 @@
+{
+    "name": "administrator/optimy_test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Ardee Ayes",
+            "email": "shinayes@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.3",
+        "symfony/routing": "^6.2",
+        "symfony/http-foundation": "^6.2"
+    },
+    "autoload": {
+      "psr-4": {
+        "App\\": "app/"
+       }
+    }
+}
